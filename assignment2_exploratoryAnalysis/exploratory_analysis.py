@@ -47,3 +47,13 @@ print(df[df["unit_price"] == lowest_price])
 
 highest_price = df["unit_price"].max()
 lowest_price = df["unit_price"].min()
+
+# Check whether the average unit price meets the threshold
+average_price = df["unit_price"].mean()
+price_threshold = 3.00
+print("\nAverage Unit Price Analysis:")
+print("Average Unit Price:", round(average_price, 2))
+if average_price >= price_threshold:
+    print("The average unit price meets the $3.00 threshold.")
+else:
+    print("The average unit price is below the $3.00 threshold.")
