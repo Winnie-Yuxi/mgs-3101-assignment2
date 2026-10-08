@@ -16,3 +16,7 @@ print(df.dtypes)
 # Display the first five rows.
 print("\nFirst five rows:")
 print(df.head())
+
+# Count missing values in each column.
+print("\nMissing values in each column:")
+print(df.isna().sum())
