@@ -27,3 +27,8 @@ print(df.describe())
 # Display the median for numerical columns
 print("\nMedian Values:")
 print(df.median(numeric_only=True))
+
+# Group data by product category
+print("\nTotal Quantity Sold by Product Category:")
+category_sales = df.groupby("product_category")["transaction_qty"].sum()
+print(category_sales.sort_values(ascending=False))
