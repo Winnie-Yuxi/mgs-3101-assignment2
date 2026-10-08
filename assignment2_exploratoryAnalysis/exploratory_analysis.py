@@ -12,3 +12,7 @@ print("Number of columns:", df.shape[1])
 # Display the data type of each column.
 print("\nColumn data types:")
 print(df.dtypes)
+
+# Display the first five rows.
+print("\nFirst five rows:")
+print(df.head())
