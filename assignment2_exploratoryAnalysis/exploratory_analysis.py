@@ -20,3 +20,10 @@ print(df.head())
 # Count missing values in each column.
 print("\nMissing values in each column:")
 print(df.isna().sum())
+
+# Display descriptive statistics for numerical columns
+print("\nDescriptive Statistics:")
+print(df.describe())
+# Display the median for numerical columns
+print("\nMedian Values:")
+print(df.median(numeric_only=True))
