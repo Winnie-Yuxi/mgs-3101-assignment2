@@ -70,3 +70,16 @@ df["month"] = df["transaction_date"].dt.month
 monthly_revenue = df.groupby("month")["revenue"].sum()
 print("\nMonthly Revenue:")
 print(monthly_revenue.round(2))
+
+# Analyze the busiest hours of the day
+df["hour"] = pd.to_datetime(
+    df["transaction_time"], format="%H:%M:%S"
+).dt.hour
+# Calculate total quantity sold each hour
+hourly_sales = df.groupby("hour")["transaction_qty"].sum()
+print("\nTotal Quantity Sold by Hour:")
+print(hourly_sales.sort_index())
+# Find the busiest hour
+busiest_hour = hourly_sales.idxmax()
+print("\nBusiest Hour:", busiest_hour)
+print("Quantity Sold:", hourly_sales.max())
