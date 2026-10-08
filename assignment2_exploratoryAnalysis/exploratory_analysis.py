@@ -92,3 +92,21 @@ print(category_revenue.sort_values(ascending=False).round(2))
 top_category = category_revenue.idxmax()
 print("\nHighest Revenue Category:", top_category)
 print("Revenue:", round(category_revenue.max(), 2))
+
+# Print a short summary of the main findings
+print("\n===== Exploratory Analysis Summary =====")
+print("1. Monthly Revenue:")
+print("The month with the highest revenue was",
+      monthly_revenue.idxmax(),
+      "with total revenue of $",
+      round(monthly_revenue.max(), 2))
+print("\n2. Busiest Sales Hour:")
+print("The busiest hour was", busiest_hour,
+      ":00, with", hourly_sales.max(), "units sold.")
+print("\n3. Product Category:")
+print("The category with the highest revenue was",
+      top_category, "with total revenue of $",
+      round(category_revenue.max(), 2))
+print("\n4. Average Unit Price:")
+print("The average unit price was $",
+      round(average_price, 2))
