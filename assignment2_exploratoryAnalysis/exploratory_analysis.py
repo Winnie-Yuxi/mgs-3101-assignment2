@@ -8,3 +8,7 @@ print("\nDataset shape:")
 print(df.shape)
 print("Number of rows:", df.shape[0])
 print("Number of columns:", df.shape[1])
+
+# Display the data type of each column.
+print("\nColumn data types:")
+print(df.dtypes)
