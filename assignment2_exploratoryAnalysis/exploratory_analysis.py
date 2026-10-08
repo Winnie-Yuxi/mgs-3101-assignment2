@@ -57,3 +57,16 @@ if average_price >= price_threshold:
     print("The average unit price meets the $3.00 threshold.")
 else:
     print("The average unit price is below the $3.00 threshold.")
+
+# Calculate revenue for each transaction record
+df["revenue"] = df["transaction_qty"] * df["unit_price"]
+# Convert transaction_date to datetime format
+df["transaction_date"] = pd.to_datetime(
+    df["transaction_date"], format="%m/%d/%y"
+)
+# Extract the month from each transaction date
+df["month"] = df["transaction_date"].dt.month
+# Calculate total revenue for each month
+monthly_revenue = df.groupby("month")["revenue"].sum()
+print("\nMonthly Revenue:")
+print(monthly_revenue.round(2))
