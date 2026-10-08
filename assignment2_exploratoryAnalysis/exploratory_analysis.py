@@ -83,3 +83,12 @@ print(hourly_sales.sort_index())
 busiest_hour = hourly_sales.idxmax()
 print("\nBusiest Hour:", busiest_hour)
 print("Quantity Sold:", hourly_sales.max())
+
+# Calculate total revenue by product category
+category_revenue = df.groupby("product_category")["revenue"].sum()
+print("\nTotal Revenue by Product Category:")
+print(category_revenue.sort_values(ascending=False).round(2))
+# Find the category with the highest revenue
+top_category = category_revenue.idxmax()
+print("\nHighest Revenue Category:", top_category)
+print("Revenue:", round(category_revenue.max(), 2))
