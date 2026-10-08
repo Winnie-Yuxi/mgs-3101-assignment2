@@ -32,3 +32,18 @@ print(df.median(numeric_only=True))
 print("\nTotal Quantity Sold by Product Category:")
 category_sales = df.groupby("product_category")["transaction_qty"].sum()
 print(category_sales.sort_values(ascending=False))
+
+# Find the highest and lowest unit prices
+print("\nHighest Unit Price:")
+highest_price = df["unit_price"].max()
+print(highest_price)
+print("\nRow(s) with Highest Unit Price:")
+print(df[df["unit_price"] == highest_price])
+print("\nLowest Unit Price:")
+lowest_price = df["unit_price"].min()
+print(lowest_price)
+print("\nRow(s) with Lowest Unit Price:")
+print(df[df["unit_price"] == lowest_price])
+
+highest_price = df["unit_price"].max()
+lowest_price = df["unit_price"].min()
