@@ -2,3 +2,9 @@ import pandas as pd
 
 df = pd.read_csv("data/Coffee_Shop_Sales.csv")
 print("Coffee shop dataset loaded successfully.")
+
+# Display the number of rows and columns.
+print("\nDataset shape:")
+print(df.shape)
+print("Number of rows:", df.shape[0])
+print("Number of columns:", df.shape[1])
